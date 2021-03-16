@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="sample.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="190.0" layoutY="24.0" prefHeight="58.0" prefWidth="221.0" text="Danh sách sinh viên">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TenSV" layoutX="83.0" layoutY="100.0" prefHeight="25.0" prefWidth="164.0" promptText="Tên sv" />
+      <TextField fx:id="Email" layoutX="268.0" layoutY="100.0" prefHeight="25.0" prefWidth="152.0" promptText="Email" />
+      <Text fx:id="txtValidate" disable="true" fill="#ee0a0a" layoutX="54.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-color: red;" text="" wrappingWidth="387.22900390625" />
+      <TextArea fx:id="ds" layoutX="55.0" layoutY="166.0" prefHeight="200.0" prefWidth="490.0" promptText="Danh sach" style="-fx-border-color: orange;" />
+      <Button onAction="#submit" layoutX="447.0" layoutY="100.0" mnemonicParsing="false" text="Submit" />
+   </children>
+</Pane>
