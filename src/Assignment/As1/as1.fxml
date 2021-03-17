@@ -15,9 +15,15 @@
       <TextField fx:id="TenSV" layoutX="82.0" layoutY="72.0" prefHeight="25.0" prefWidth="84.0" promptText="Tên SV" />
       <TextField fx:id="Age" layoutX="203.0" layoutY="72.0" prefHeight="25.0" prefWidth="84.0" promptText="Age" />
       <TextField fx:id="Diem" layoutX="319.0" layoutY="72.0" prefHeight="25.0" prefWidth="84.0" promptText="Điểm Thi" />
-      <TextArea fx:id="ds" layoutX="55.0" layoutY="166.0" prefHeight="200.0" prefWidth="490.0" promptText="Danh sach" style="-fx-border-color: orange;" />
+      <TableView fx:id="DS" layoutX="37.0" layoutY="212.0" prefHeight="333.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+         <columns>
+            <TableColumn fx:id="tenSV" prefWidth="254.0" text="Họ và Tên" />
+            <TableColumn fx:id="tuoisv" minWidth="0.0" prefWidth="136.0" text="Tuổi" />
+            <TableColumn fx:id="diemSV" minWidth="0.0" prefWidth="135.0" text="Điểm thi" />
+         </columns>
+      </TableView>
       <Button onAction="#submit" layoutX="436.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Submit" />
-      <Button onAction="#sapXep" layoutX="258.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Sắp Xếp" />
+      <Button fx:id="Cao" onAction="#sapXep" layoutX="258.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Sắp Xếp" />
       <Text fx:id="txtValidate" fill="#ff0101" layoutX="82.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="289.13671875">
          <font>
             <Font size="18.0" />
