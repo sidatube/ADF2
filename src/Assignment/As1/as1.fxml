@@ -23,7 +23,7 @@
          </columns>
       </TableView>
       <Button onAction="#submit" layoutX="436.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="62.0" text="Submit" />
-      <Button fx:id="Cao" onAction="#sapXep" layoutX="258.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Sắp Xếp" />
+      <Button fx:id="Cao" onAction="#update" layoutX="258.0" layoutY="130.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" text="Get this" />
       <Text fx:id="txtValidate" fill="#ff0101" layoutX="82.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="289.13671875">
          <font>
             <Font size="18.0" />

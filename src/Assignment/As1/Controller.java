@@ -5,7 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.text.Text;
+import test.Gender;
+import test.Person;
 
 import java.net.URL;
 import java.util.*;
@@ -20,6 +23,8 @@ public class Controller implements Initializable {
     public TableColumn<Danhsachsv,Double> diemSV;
     public Text txtValidate;
     public Button Cao;
+    public static Integer identity =0;
+    public static Danhsachsv editSV;
 
     ObservableList<Danhsachsv> ds = FXCollections.observableArrayList();
     boolean sortstlye=false;
@@ -29,7 +34,10 @@ public class Controller implements Initializable {
         tenSV.setCellValueFactory(new PropertyValueFactory<Danhsachsv,String>("TenSV"));
         tuoisv.setCellValueFactory(new PropertyValueFactory<Danhsachsv,Integer>("Age"));
         diemSV.setCellValueFactory(new PropertyValueFactory<Danhsachsv,Double>("Diem"));
+
     }
+
+
 
 
     public void submit(){
@@ -39,13 +47,29 @@ public class Controller implements Initializable {
             double c = Double.parseDouble(Diem.getText());
 
             if (!a.isEmpty()){
-                ds.add(new Danhsachsv(a,b,c));
+                if (editSV !=null){
+                    editSV.setTenSV(a);
+                    editSV.setAge(b);
+                    editSV.setDiem(c);
+                    for (Danhsachsv s : ds){
+                        if (s.getId()== editSV.getId()){
+                            s = editSV;
+                            DS.refresh();
+                            break;
+                        }
+                    }
+
+                }else {
+                    identity++;
+                    ds.add(new Danhsachsv(identity, a, b, c));
+                    DS.setItems(ds);
+
+                }
 
                 TenSV.setText("");
                 Age.setText("");
                 Diem.setText("");
                 txtValidate.setText("");
-                DS.setItems(ds);
             }else{
                 txtValidate.setText("Just do it!!!!!!");
                 txtValidate.setDisable(false);
@@ -83,7 +107,16 @@ public class Controller implements Initializable {
             txt +=s.getTenSV()+"-"+s.getAge()+"-"+s.getDiem()+"\n";
         }
 
-
     }
+    public void  update(){
+        Danhsachsv s = DS.getSelectionModel().getSelectedItem();
+        TenSV.setText(s.getTenSV());
+        Age.setText(s.getAge().toString());
+        Diem.setText(s.getDiem().toString());
+        editSV =s;
+    }
+
+
+
 
 }

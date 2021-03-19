@@ -6,7 +6,8 @@ public class Danhsachsv {
     Integer Age;
     Double Diem;
 
-    public Danhsachsv(String tenSV, int age, double diem) {
+    public Danhsachsv(Integer id, String tenSV, Integer age, Double diem) {
+        Id = id;
         TenSV = tenSV;
         Age = age;
         Diem = diem;
