@@ -23,7 +23,7 @@ public class Controller implements Initializable {
     public TableColumn<Danhsachsv,Double> diemSV;
     public Text txtValidate;
     public Button Cao;
-    public static Integer identity =0;
+    public static Integer identity =0  ;
     public static Danhsachsv editSV;
 
     ObservableList<Danhsachsv> ds = FXCollections.observableArrayList();

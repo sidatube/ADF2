@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:controller="Timer.TimeController"  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
+    <children>
+        <Text fx:id="txtMin" layoutX="177.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+            <font>
+                <Font size="80.0" />
+            </font>
+        </Text>
+        <Text fx:id="txtSec" layoutX="322.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00">
+            <font>
+                <Font size="80.0" />
+            </font>
+        </Text>
+        <Text layoutX="290.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text=":">
+            <font>
+                <Font size="80.0" />
+            </font>
+        </Text>
+        <Button layoutX="114.0" layoutY="187.0" mnemonicParsing="false" onAction="#startT" prefHeight="44.0" prefWidth="97.0" text="Start">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+      <Button fx:id="coi" layoutX="242.0" layoutY="187.0" mnemonicParsing="false" onAction="#pause" prefHeight="44.0" prefWidth="116.0" text="Pause">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="385.0" layoutY="187.0" mnemonicParsing="false" onAction="#stop" prefHeight="44.0" prefWidth="86.0" text="Stop">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+    </children>
+</Pane>
