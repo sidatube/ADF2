@@ -17,7 +17,7 @@ public class TimeController {
     public boolean nonot = false;
     public Button coi;
 
-    public void startTimer(){
+    public void Timer(){
         Runnable as=new Runnable() {
             @Override
             public void run() {
@@ -57,7 +57,7 @@ public class TimeController {
     public void startT(){
         min=2;
         sec=30;
-        startTimer();
+        Timer();
     }
     public void pause(){
         nonot = !nonot;
@@ -66,7 +66,7 @@ public class TimeController {
             min=Integer.parseInt(txtMin.getText());
             sec=Integer.parseInt(txtSec.getText());
         }else {
-            startTimer();
+            Timer();
             coi.setText("Pause");
         }
     }
