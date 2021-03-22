@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment.As1.ThemController">
+   <children>
+      <TextField fx:id="txtName" alignment="CENTER" layoutX="204.0" layoutY="114.0" prefHeight="25.0" prefWidth="194.0" promptText="Họ Và tên" />
+      <TextField fx:id="txtAge" alignment="CENTER" layoutX="204.0" layoutY="160.0" prefHeight="25.0" prefWidth="194.0" promptText="Tuổi" />
+      <TextField fx:id="txtDiem" alignment="CENTER" layoutX="204.0" layoutY="206.0" prefHeight="25.0" prefWidth="194.0" promptText="Điểm" />
+      <Button layoutX="203.0" layoutY="287.0" mnemonicParsing="false" onAction="#submit" prefHeight="46.0" prefWidth="194.0" text="Thêm học sinh" />
+      <Text layoutX="220.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thêm học Sinh" wrappingWidth="160.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="203.0" layoutY="355.0" mnemonicParsing="false" onAction="#xemhs" prefHeight="25.0" prefWidth="194.0" text="Xem học sinh" />
+      <Button mnemonicParsing="false" onAction="#back" text="Back" />
+      <Text fx:id="txtChu" fill="RED" layoutX="174.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</Pane>

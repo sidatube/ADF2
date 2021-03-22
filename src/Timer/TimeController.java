@@ -24,10 +24,9 @@ public class TimeController {
                 for (Integer i=min;i>=0;i--){
                     for (Integer j=sec;j>=0;j--){
                         if (nonot){
-
                             return;
-                        }
-                        if (yesnot){
+                        }else if (yesnot){
+
                             yesnot=!yesnot;
                             txtMin.setText("00");
                             txtSec.setText("00");

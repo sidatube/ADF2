@@ -1,8 +1,12 @@
 package Assignment.As1;
 
+import Assignment.Test.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -84,12 +88,12 @@ public class Controller implements Initializable {
     public void sapXep(){
         sortstlye=!sortstlye;
         if (sortstlye){
-           Collections.sort(ds, new Comparator<Danhsachsv>() {
-               @Override
-               public int compare(Danhsachsv o1, Danhsachsv o2) {
-                   return (int)(o1.getDiem()-o2.getDiem());
-               }
-           });
+            Collections.sort(ds, new Comparator<Danhsachsv>() {
+                @Override
+                public int compare(Danhsachsv o1, Danhsachsv o2) {
+                    return (int)(o1.getDiem()-o2.getDiem());
+                }
+            });
             Cao.setText("Thap den cao");
 
         }else {
@@ -115,7 +119,27 @@ public class Controller implements Initializable {
         Diem.setText(s.getDiem().toString());
         editSV =s;
     }
+    public void back() throws Exception{
 
+        Parent root = FXMLLoader.load(getClass().getResource("../Test/home.fxml"));
+        Assignment.Test.Main.mainStage.setTitle("Hello DSSV");
+        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 150));
+        Main.mainStage.show();
+    }
+    public void veds() throws Exception{
+//        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("as1.fxml"));
+        Assignment.Test.Main.mainStage.setTitle("Hello DSSV");
+        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 500));
+        Main.mainStage.show();
+    }
+    public void sangsua() throws Exception{
+//        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("suahocsinh.fxml"));
+        Assignment.Test.Main.mainStage.setTitle("Hello DSSV");
+        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 500));
+        Main.mainStage.show();
+    }
 
 
 
