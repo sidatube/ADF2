@@ -1,25 +1,19 @@
-package Assignment.As1;
+package Assignment.As1.model;
 
 public class Danhsachsv {
-    Integer Id;
+
     String TenSV;
     Integer Age;
     Double Diem;
 
-    public Danhsachsv(Integer id, String tenSV, Integer age, Double diem) {
-        Id = id;
+    public Danhsachsv( String tenSV, Integer age, Double diem) {
+
         TenSV = tenSV;
         Age = age;
         Diem = diem;
     }
 
-    public Integer getId() {
-        return Id;
-    }
 
-    public void setId(Integer id) {
-        Id = id;
-    }
 
     public String getTenSV() {
         return TenSV;

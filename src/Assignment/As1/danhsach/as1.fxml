@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment.As1.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Assignment.As1.danhsach.Controller">
    <children>
       <Label layoutX="190.0" layoutY="14.0" prefHeight="58.0" prefWidth="221.0" text="Danh sách sinh viên">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TableView fx:id="DS" layoutX="38.0" layoutY="89.0" prefHeight="333.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+      <TableView fx:id="tbview" layoutX="38.0" layoutY="89.0" prefHeight="333.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
          <columns>
             <TableColumn fx:id="tenSV" prefWidth="254.0" text="Họ và Tên" />
-            <TableColumn fx:id="tuoisv" minWidth="0.0" prefWidth="136.0" text="Tuổi" />
+            <TableColumn fx:id="tuoiSV" minWidth="0.0" prefWidth="136.0" text="Tuổi" />
             <TableColumn fx:id="diemSV" minWidth="0.0" prefWidth="135.0" text="Điểm thi" />
          </columns>
       </TableView>
       <Button layoutX="263.0" layoutY="441.0" mnemonicParsing="false" onAction="#sangsua" prefHeight="25.0" prefWidth="77.0" text="Sửa" />
-      <Text fx:id="txtValidate" fill="#ff0101" layoutX="82.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="289.13671875">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Text>
       <Button layoutX="7.0" layoutY="2.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="62.0" text="Back" />
    </children>
 </Pane>

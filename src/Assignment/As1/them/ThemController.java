@@ -1,6 +1,7 @@
-package Assignment.As1;
+package Assignment.As1.them;
 
-import Assignment.Test.Main;
+import Assignment.As1.model.Danhsachsv;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -9,23 +10,27 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+
 public class ThemController {
     public TextField txtName;
     public TextField txtDiem;
     public TextField txtAge;
     public Text txtChu;
-    public static Integer identity =0  ;
 
 
-    ObservableList<Danhsachsv> ds = FXCollections.observableArrayList();
     public void submit(){
         try{
+            FileOutputStream fos= new FileOutputStream("danhsachsinhvien.bin");
+            DataOutputStream dos = new DataOutputStream(fos);
             String a = txtName.getText();
             int b = Integer.parseInt(txtAge.getText());
             double c = Double.parseDouble(txtDiem.getText());
             if (!a.isEmpty()){
-                identity++;
-                ds.add(new Danhsachsv(identity,a,b,c));
+                dos.writeBytes(a+"\n");
+                dos.writeBytes(b+"\n");
+                dos.writeBytes(c+"\n");
             }
             txtName.setText("");
             txtAge.setText("");
@@ -41,17 +46,16 @@ public class ThemController {
 
     public void back() throws Exception{
 //        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("../Test/home.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("Hello DSSV");
-        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 150));
-        Main.mainStage.show();
+        Parent root = FXMLLoader.load(getClass().getResource("../../Test/home.fxml"));
+        Assignment.Test.Main.mainStage.setTitle("Trang chủ");
+        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 200));
+
     }
     public void xemhs() throws Exception{
 //        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("as1.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("Hello DSSV");
+        Parent root = FXMLLoader.load(getClass().getResource("../danhsach/as1.fxml"));
+        Assignment.Test.Main.mainStage.setTitle("DSSV");
         Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 500));
-        Main.mainStage.show();
     }
 
 
