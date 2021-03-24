@@ -10,8 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 public class ThemController {
     public TextField txtName;
@@ -22,15 +25,28 @@ public class ThemController {
 
     public void submit(){
         try{
+            FileInputStream fis = new FileInputStream("danhsachsinhvien.bin");
+            DataInputStream dis= new DataInputStream(fis);
+            String txt = dis.readLine();
+            ArrayList<String> ar = new ArrayList<>();
+            while(txt!=null){
+                ar.add(txt);
+                txt = dis.readLine();
+            }
+
+
             FileOutputStream fos= new FileOutputStream("danhsachsinhvien.bin");
             DataOutputStream dos = new DataOutputStream(fos);
-            String a = txtName.getText();
-            int b = Integer.parseInt(txtAge.getText());
-            double c = Double.parseDouble(txtDiem.getText());
-            if (!a.isEmpty()){
-                dos.writeBytes(a+"\n");
-                dos.writeBytes(b+"\n");
-                dos.writeBytes(c+"\n");
+
+            if (!txtName.getText().isEmpty()){
+                ar.add(txtName.getText());
+                ar.add(txtDiem.getText());
+                ar.add(txtAge.getText());
+
+            }
+            for (String x: ar
+            ) {
+                dos.writeBytes(x+"\n");
             }
             txtName.setText("");
             txtAge.setText("");
