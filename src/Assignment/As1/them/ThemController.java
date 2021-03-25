@@ -10,10 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 
 public class ThemController {
@@ -25,25 +22,28 @@ public class ThemController {
 
     public void submit(){
         try{
+            ArrayList<String> ar = new ArrayList<>();
+            String a = txtName.getText();
+            Integer b = Integer.parseInt(txtAge.getText());
+            Double c = Double.parseDouble(txtDiem.getText());
+            if (!a.isEmpty()&&b!=null&&c!=null){
+                ar.add(a);
+                ar.add(b.toString());
+                ar.add(c.toString());
+            }
             FileInputStream fis = new FileInputStream("danhsachsinhvien.bin");
             DataInputStream dis= new DataInputStream(fis);
             String txt = dis.readLine();
-            ArrayList<String> ar = new ArrayList<>();
             while(txt!=null){
                 ar.add(txt);
                 txt = dis.readLine();
             }
-
+            System.out.println(ar.size());
 
             FileOutputStream fos= new FileOutputStream("danhsachsinhvien.bin");
             DataOutputStream dos = new DataOutputStream(fos);
 
-            if (!txtName.getText().isEmpty()){
-                ar.add(txtName.getText());
-                ar.add(txtDiem.getText());
-                ar.add(txtAge.getText());
 
-            }
             for (String x: ar
             ) {
                 dos.writeBytes(x+"\n");
