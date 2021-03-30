@@ -1,7 +1,8 @@
 package Assignment.As1.them;
 
-import Assignment.As1.model.Danhsachsv;
 
+
+import Assignment.Test.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -21,8 +22,9 @@ public class ThemController {
 
 
     public void submit(){
+        ArrayList<String> ar = new ArrayList<>();
+
         try{
-            ArrayList<String> ar = new ArrayList<>();
             String a = txtName.getText();
             Integer b = Integer.parseInt(txtAge.getText());
             Double c = Double.parseDouble(txtDiem.getText());
@@ -38,11 +40,11 @@ public class ThemController {
                 ar.add(txt);
                 txt = dis.readLine();
             }
-            System.out.println(ar.size());
 
             FileOutputStream fos= new FileOutputStream("danhsachsinhvien.bin");
             DataOutputStream dos = new DataOutputStream(fos);
 
+            System.out.println(ar.size());
 
             for (String x: ar
             ) {
@@ -56,6 +58,7 @@ public class ThemController {
         }catch (Exception e){
             txtChu.setText("Just do it!!!!!!");
             txtChu.setDisable(false);
+
         }
     }
 
@@ -63,15 +66,15 @@ public class ThemController {
     public void back() throws Exception{
 //        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../../Test/home.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("Trang chủ");
-        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 200));
+        Main.mainStage.setTitle("Trang chủ");
+        Main.mainStage.setScene(new Scene(root, 600, 200));
 
     }
     public void xemhs() throws Exception{
 //        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../danhsach/as1.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("DSSV");
-        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 500));
+        Main.mainStage.setTitle("DSSV");
+        Main.mainStage.setScene(new Scene(root, 600, 500));
     }
 
 

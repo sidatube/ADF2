@@ -4,9 +4,9 @@ public class Danhsachsv {
 
     String TenSV;
     Integer Age;
-    Double Diem;
+    Float Diem;
 
-    public Danhsachsv( String tenSV, Integer age, Double diem) {
+    public Danhsachsv( String tenSV, Integer age, Float diem) {
 
         TenSV = tenSV;
         Age = age;
@@ -31,11 +31,11 @@ public class Danhsachsv {
         Age = age;
     }
 
-    public Double getDiem() {
+    public Float getDiem() {
         return Diem;
     }
 
-    public void setDiem(Double diem) {
+    public void setDiem(Float diem) {
         Diem = diem;
     }
 }

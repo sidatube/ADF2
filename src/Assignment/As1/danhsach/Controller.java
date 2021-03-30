@@ -2,6 +2,7 @@ package Assignment.As1.danhsach;
 
 import Assignment.As1.model.Danhsachsv;
 
+import Assignment.Test.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Text;
-
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -31,8 +30,9 @@ public class Controller implements Initializable{
         tenSV.setCellValueFactory(new PropertyValueFactory<Danhsachsv,String>("tenSV"));
         tuoiSV.setCellValueFactory(new PropertyValueFactory<Danhsachsv,Integer>("age"));
         diemSV.setCellValueFactory(new PropertyValueFactory<Danhsachsv,Double>("diem"));
+
         ObservableList<Danhsachsv> ds = FXCollections.observableArrayList();
-        // lay sinh vien tu file studen.bin de nap vao danh sach
+        // lay sinh vien tu file danhsachsinhvien.bin de nap vao danh sach
         try{
             FileInputStream fis =new FileInputStream("danhsachsinhvien.bin");
             DataInputStream dis = new DataInputStream(fis);
@@ -44,7 +44,7 @@ public class Controller implements Initializable{
                 line++;
                 txt = dis.readLine();
                 if (line>=3){
-                    Danhsachsv sv = new Danhsachsv(str[0],Integer.parseInt(str[1]),Double.parseDouble(str[2]));
+                    Danhsachsv sv = new Danhsachsv(str[0],Integer.parseInt(str[1]),Float.parseFloat(str[2]));
                     ds.add(sv);
                     line=0;
                 }
@@ -60,16 +60,16 @@ public class Controller implements Initializable{
     public void back() throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("../../Test/home.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("Trang chủ");
-        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 200));
+        Main.mainStage.setTitle("Trang chủ");
+        Main.mainStage.setScene(new Scene(root, 600, 200));
 
     }
 
     public void sangsua() throws Exception{
 //        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("../sua/suahocsinh.fxml"));
-        Assignment.Test.Main.mainStage.setTitle("Sửa học sinh");
-        Assignment.Test.Main.mainStage.setScene(new Scene(root, 600, 500));
+        Main.mainStage.setTitle("Sửa học sinh");
+        Main.mainStage.setScene(new Scene(root, 600, 500));
 
     }
 
